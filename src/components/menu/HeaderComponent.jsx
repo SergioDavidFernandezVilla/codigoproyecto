@@ -1,26 +1,55 @@
-import { Link } from 'react-router-dom';
+import { AiOutlineBars } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import SubMenuComponent from "./submenu/SubMenuComponent.jsx";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({
+  cantidadProductos,
+  setCantidadProductos,
+  carrito,
+  setCarrito,
+  modalCarrito,
+  setModalCarrito,
+  modoNotificacionGrupo,
+  setModoNotificacionGrupo
+}) => {
   return (
-    <header>
-      <ul>
-        <li>
-          <h1>Tienda Online</h1>
-        </li>
-
-        <ul>
+    <>
+      <header className="header_menu_principal">
+        <ul className="ul_header_menu_principal">
           <li>
-            <Link  to="/productos">Comprar</Link>
+            <AiOutlineBars className="icon_menu_header" />
           </li>
           <li>
-            <Link to="/productos">Productos</Link>
-          </li>
-          <li>
-            <Link to="/contacto">Contacto</Link>
+            <Link to="/">
+              <h1 className="titulo_pagina">Tienda Online</h1>
+            </Link>
           </li>
         </ul>
-      </ul>
-    </header>
+
+        <ul className="ul_header_menu_principal">
+          <li>
+            <figure>
+              <img
+                className="perfil_user"
+                src="./assets/images/camisa-manga-corta.jpg"
+                alt="logo"
+              ></img>
+            </figure>
+          </li>
+        </ul>
+      </header>
+
+      <SubMenuComponent
+        modoNotificacionGrupo={modoNotificacionGrupo}
+        setModoNotificacionGrupo={setModoNotificacionGrupo}
+        cantidadProductos={cantidadProductos}
+        setCantidadProductos={setCantidadProductos}
+        carrito={carrito}
+        setCarrito={setCarrito}
+        modalCarrito={modalCarrito}
+        setModalCarrito={setModalCarrito}
+      />
+    </>
   );
 };
 
