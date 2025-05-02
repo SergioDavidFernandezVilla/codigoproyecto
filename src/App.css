@@ -401,6 +401,40 @@ figure {
         background-color: rgba(59, 59, 59, 0.463);
         animation: CortidaDetailProduct 0.3s ease-in-out;
         animation-fill-mode: forwards;
+
+        .header_figure_figcation_tag_compra_linea_producto_en_carrito {
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          flex-direction: row;
+          gap: 5px;
+          padding: 5px;
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            border-radius: 400px;
+            background: none;
+            border: 1px solid white;
+            font-weight: 700;
+            color: white;
+            padding: 4px 8px;
+          }
+        }
+
+        .div_figure_figcaption_producto_en_carrito {
+          display: none;
+
+          &:hover {
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999;
+          }
+        }
       }
 
       .container_figure_tag_compra_linea {
@@ -420,31 +454,11 @@ figure {
           align-items: start;
           gap: 10px;
 
-          .header_figure_figcation_tag_compra_linea_producto_en_carrito {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            flex-direction: row;
-            gap: 5px;
-
-            button {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 3px;
-              border-radius: 400px;
-              background: none;
-              border: 1px solid white;
-              font-weight: 700;
-              color: white;
-              padding: 4px 8px;
-            }
-          }
-
           .footer_figure_figcation_tag_compra_linea_producto_en_carrito {
             align-items: end;
             display: flex;
             justify-content: start;
+            background-color: red;
             width: 100%;
             height: 100%;
             padding: 4px;
@@ -467,7 +481,7 @@ figure {
 }
 
 .container_notificaciones {
-  position: absolute;
+  position: fixed;
   top: 110px;
   width: 100%;
   z-index: 120;
@@ -483,24 +497,6 @@ figure {
     display: flex;
     justify-content: end;
     align-items: center;
-
-    /* ESTADOS */
-    .notificacion_success {
-      background-color: #28a745; /* Verde */
-    }
-
-    .notificacion_error {
-      background-color: #dc3545; /* Rojo */
-    }
-
-    .notificacion_info {
-      background-color: #007bff; /* Azul */
-    }
-
-    .notificacion_warning {
-      background-color: #ffc107; /* Amarillo */
-      color: #000; /* Mejor legibilidad */
-    }
 
     .header_container_notificaciones {
       display: flex;
